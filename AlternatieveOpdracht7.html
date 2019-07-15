@@ -4,35 +4,45 @@
         
         var parkeerkosten = 7.60;
     
+        function betaaldCheck(deMunt){
+            if((parkeerkosten - deMunt) <= 0){
+                parkeerkosten = "Bedankt en tot ziens!";
+                console.log(parkeerkosten);
+                printParkeerkosten();
+            }else{
+                betalen(deMunt);
+            }
+        }
+
         function betalen(munt) {
             console.log(munt);
 
             switch(munt){
-                case "2EUR":
+                case 2:
                     parkeerkosten = parkeerkosten - 2;
                     console.log(parkeerkosten);
                     printParkeerkosten();
                     break;
 
-                case "1EUR":
+                case 1:
                     parkeerkosten = parkeerkosten - 1;
                     console.log(parkeerkosten);
                     printParkeerkosten();
                     break;
 
-                case "0,50EUR":
+                case 0.50:
                     parkeerkosten = parkeerkosten - 0.50;
                     console.log(parkeerkosten);
                     printParkeerkosten();
                     break;
                     
-                case "0,20EUR":
+                case 0.20:
                     parkeerkosten = parkeerkosten - 0.20;
                     console.log(parkeerkosten);
                     printParkeerkosten();
                     break;
 
-                case "0,10EUR":
+                case 0.10:
                     parkeerkosten = parkeerkosten - 0.10;
                     console.log(parkeerkosten);
                     printParkeerkosten();
@@ -56,11 +66,11 @@
         Parkeerkosten (EUR)<br><br>
         <div id=kostendisplay> 7,60 </div><br>
         Inworp<br>
-        <button onclick=betalen(this.id) id= 2EUR> EUR 2 </button>
-        <button onclick=betalen(this.id) id= 1EUR> EUR 1 </button>
-        <button onclick=betalen(this.id) id= 0,50EUR> EUR 0,50 </button><br>
-        <button onclick=betalen(this.id) id= 0,20EUR> EUR 0,20 </button>
-        <button onclick=betalen(this.id) id= 0,10EUR> EUR 0,10 </button>
+        <button onclick=betaaldCheck(2)> EUR 2 </button>
+        <button onclick=betaaldCheck(1)> EUR 1 </button>
+        <button onclick=betaaldCheck(0.50)> EUR 0,50 </button><br>
+        <button onclick=betaaldCheck(0.20)> EUR 0,20 </button>
+        <button onclick=betaaldCheck(0.10)> EUR 0,10 </button>
        
     </body>
 </html>
