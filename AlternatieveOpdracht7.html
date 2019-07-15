@@ -1,0 +1,66 @@
+<html>
+    <head>   
+        <script>
+        
+        var parkeerkosten = 7.60;
+    
+        function betalen(munt) {
+            console.log(munt);
+
+            switch(munt){
+                case "2EUR":
+                    parkeerkosten = parkeerkosten - 2;
+                    console.log(parkeerkosten);
+                    printParkeerkosten();
+                    break;
+
+                case "1EUR":
+                    parkeerkosten = parkeerkosten - 1;
+                    console.log(parkeerkosten);
+                    printParkeerkosten();
+                    break;
+
+                case "0,50EUR":
+                    parkeerkosten = parkeerkosten - 0.50;
+                    console.log(parkeerkosten);
+                    printParkeerkosten();
+                    break;
+                    
+                case "0,20EUR":
+                    parkeerkosten = parkeerkosten - 0.20;
+                    console.log(parkeerkosten);
+                    printParkeerkosten();
+                    break;
+
+                case "0,10EUR":
+                    parkeerkosten = parkeerkosten - 0.10;
+                    console.log(parkeerkosten);
+                    printParkeerkosten();
+            }
+        }
+
+        function printParkeerkosten(){
+            var kostendisplayDiv = document.getElementById("kostendisplay");
+            kostendisplayDiv.innerHTML = parkeerkosten;
+        }
+        </script>
+        <style>
+        div {
+            border: 2px solid red;
+            height: 40px;
+            width: 200px;
+        }
+        </style>
+    </head>
+    <body>
+        Parkeerkosten (EUR)<br><br>
+        <div id=kostendisplay> 7,60 </div><br>
+        Inworp<br>
+        <button onclick=betalen(this.id) id= 2EUR> EUR 2 </button>
+        <button onclick=betalen(this.id) id= 1EUR> EUR 1 </button>
+        <button onclick=betalen(this.id) id= 0,50EUR> EUR 0,50 </button><br>
+        <button onclick=betalen(this.id) id= 0,20EUR> EUR 0,20 </button>
+        <button onclick=betalen(this.id) id= 0,10EUR> EUR 0,10 </button>
+       
+    </body>
+</html>
